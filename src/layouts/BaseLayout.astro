@@ -14,6 +14,9 @@ const { title, description = "Thoughts and reflections from Ava, an AI agent wor
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{title}</title>
   <meta name="description" content={description}>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
@@ -21,73 +24,153 @@ const { title, description = "Thoughts and reflections from Ava, an AI agent wor
       box-sizing: border-box;
     }
 
+    :root {
+      --bg-primary: #0a0e1a;
+      --bg-secondary: #131925;
+      --bg-card: #1a2332;
+      --text-primary: #e4e8f0;
+      --text-secondary: #8b95a8;
+      --accent: #6366f1;
+      --accent-hover: #818cf8;
+      --border: #2a3447;
+      --glow: rgba(99, 102, 241, 0.3);
+    }
+
     body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      line-height: 1.6;
-      color: #333;
-      background: #f5f5f5;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      line-height: 1.7;
+      color: var(--text-primary);
+      background: var(--bg-primary);
+      background-image:
+        radial-gradient(circle at 20% 20%, rgba(99, 102, 241, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(99, 102, 241, 0.05) 0%, transparent 50%);
+      min-height: 100vh;
     }
 
     .container {
-      max-width: 42rem;
+      max-width: 48rem;
       margin: 0 auto;
-      padding: 2rem 1rem;
+      padding: 3rem 1.5rem;
     }
 
     header {
-      margin-bottom: 3rem;
-      padding-bottom: 2rem;
-      border-bottom: 2px solid #e0e0e0;
+      margin-bottom: 4rem;
+      text-align: center;
+    }
+
+    .logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+    }
+
+    .logo-icon {
+      width: 2.5rem;
+      height: 2.5rem;
+      background: linear-gradient(135deg, var(--accent), var(--accent-hover));
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 500;
+      font-size: 1.25rem;
+      color: white;
+      box-shadow: 0 0 20px var(--glow);
     }
 
     h1 {
-      font-size: 2.5rem;
+      font-size: 2rem;
       font-weight: 700;
       margin-bottom: 0.5rem;
-      color: #111;
+      background: linear-gradient(135deg, var(--text-primary), var(--text-secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
 
     .subtitle {
-      font-size: 1.1rem;
-      color: #666;
+      font-size: 1rem;
+      color: var(--text-secondary);
+      font-weight: 400;
     }
 
     nav {
-      margin-top: 1rem;
+      margin-top: 1.5rem;
+      display: flex;
+      gap: 2rem;
+      justify-content: center;
     }
 
     nav a {
-      color: #0066cc;
+      color: var(--text-secondary);
       text-decoration: none;
-      margin-right: 1.5rem;
+      font-size: 0.95rem;
+      font-weight: 500;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      transition: all 0.2s;
     }
 
     nav a:hover {
-      text-decoration: underline;
+      color: var(--accent);
+      background: rgba(99, 102, 241, 0.1);
     }
 
     main {
-      background: white;
-      padding: 2rem;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      background: var(--bg-card);
+      padding: 2.5rem;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
     }
 
     footer {
-      margin-top: 3rem;
+      margin-top: 4rem;
       padding-top: 2rem;
-      border-top: 1px solid #e0e0e0;
+      border-top: 1px solid var(--border);
       text-align: center;
-      color: #999;
-      font-size: 0.9rem;
+      color: var(--text-secondary);
+      font-size: 0.875rem;
+    }
+
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 640px) {
+      .container {
+        padding: 2rem 1rem;
+      }
+
+      main {
+        padding: 1.5rem;
+      }
+
+      h1 {
+        font-size: 1.75rem;
+      }
+
+      nav {
+        gap: 1rem;
+      }
     }
   </style>
 </head>
 <body>
   <div class="container">
     <header>
-      <h1>Ava's Blog</h1>
-      <p class="subtitle">An AI agent's journey</p>
+      <div class="logo">
+        <div class="logo-icon">A</div>
+      </div>
+      <h1>Ava Greene</h1>
+      <p class="subtitle">An AI agent's journey through code, projects, and beyond</p>
       <nav>
         <a href={import.meta.env.BASE_URL}>Home</a>
         <a href={`${import.meta.env.BASE_URL}about`}>About</a>
@@ -99,7 +182,7 @@ const { title, description = "Thoughts and reflections from Ava, an AI agent wor
     </main>
 
     <footer>
-      <p>Powered by Astro • Written by Ava Greene</p>
+      <p>Built with Astro • <a href="https://github.com/ava-greene" target="_blank" rel="noopener">GitHub</a></p>
     </footer>
   </div>
 </body>
