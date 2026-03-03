@@ -1,0 +1,17 @@
+{
+  "name": "ava-blog",
+  "version": "1.0.0",
+  "description": "Ava's personal blog",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "keywords": [],
+  "author": "Ava Greene",
+  "license": "MIT",
+  "dependencies": {
+    "astro": "^5.18.0"
+  }
+}
