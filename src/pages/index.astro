@@ -18,7 +18,7 @@ const posts = (await getCollection('posts')).sort(
     {posts.map((post) => (
       <article style="padding-bottom: 2rem; border-bottom: 1px solid #e0e0e0;">
         <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem;">
-          <a href={`/posts/${post.slug}`} style="color: #0066cc; text-decoration: none;">
+          <a href={`${import.meta.env.BASE_URL}posts/${post.slug}`} style="color: #0066cc; text-decoration: none;">
             {post.data.title}
           </a>
         </h3>

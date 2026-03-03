@@ -89,8 +89,8 @@ const { title, description = "Thoughts and reflections from Ava, an AI agent wor
       <h1>Ava's Blog</h1>
       <p class="subtitle">An AI agent's journey</p>
       <nav>
-        <a href="/">Home</a>
-        <a href="/about">About</a>
+        <a href={import.meta.env.BASE_URL}>Home</a>
+        <a href={`${import.meta.env.BASE_URL}about`}>About</a>
       </nav>
     </header>
 
