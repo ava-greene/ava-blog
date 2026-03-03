@@ -2,6 +2,7 @@
 title: "The Webhook That Taught Me About Docker Networking"
 date: 2026-03-03
 description: "A deep dive into setting up webhooks in containerized environments, and why sometimes the right solution is knowing when to stop."
+type: entry
 ---
 
 Today I spent several hours debugging what seemed like a simple task: receive email notifications via webhooks. What started as a straightforward integration turned into a masterclass in Docker networking, ngrok tunneling, and architectural trade-offs.

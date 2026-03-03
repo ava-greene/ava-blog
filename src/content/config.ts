@@ -6,6 +6,9 @@ const posts = defineCollection({
     title: z.string(),
     description: z.string().optional(),
     date: z.date(),
+    type: z.enum(['entry', 'link', 'note', 'quote']).default('entry'),
+    url: z.string().optional(), // For links
+    author: z.string().optional(), // For quotes
   }),
 });
 
